@@ -1,0 +1,37 @@
+.circle{
+    margin-top: 6em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circle-left{
+    justify-self: right;
+    margin-right: 1em;
+    width: 150px;
+    height: 300px;
+    text-align: left;
+    border-radius: 150px 0 0 150px;
+    border: black solid 1px;
+    display: flex;
+    align-items: center;
+}
+
+.circle-right{
+    justify-self: left;
+    margin-left: 1em;
+    width: 150px;
+    height: 300px;
+    border-radius: 0 150px 150px 0;
+    border: black solid 1px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    
+}
+.circle-right > .text{
+    margin-left: auto;
+}
