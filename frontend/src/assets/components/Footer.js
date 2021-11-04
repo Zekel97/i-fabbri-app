@@ -3,14 +3,11 @@ import '../styles/Footer.css';
 function Footer() {
     return(
         <footer>
-            <div class="title">
+            <div className="title">
                 <h1>I Fabbri</h1>
                 <span>srl</span>
             </div>
-            <div class="footer-body">
-                <p>
-                    I Fabbri srl
-                </p>
+            <div className="footer-body">
                 <p>
                     Contrada San Sisto, 2
                 </p>

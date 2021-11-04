@@ -3,14 +3,14 @@ import '../styles/Header.css';
 function Header() {
   return (
     <header>
-        <div class="title">
+        <div className="title">
           <h1>I FABBRI</h1>
           <span>srl</span>
         </div>
 
-         <div class="menu">
-          <div class="burger"></div>
-          <div class="nav">
+         <div className="menu">
+          <div className="burger"></div>
+          <div className="nav">
             <ul>
               <li><a href="#">Homepage</a></li>
               <li><a href="#">Residenziale</a></li>
