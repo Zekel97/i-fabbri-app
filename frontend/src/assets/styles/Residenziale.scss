@@ -1,0 +1,43 @@
+@import './vars.scss';
+
+:root {
+    --main-color: $main-color;
+    --font-color: $font-color;
+}
+
+.residenziale {
+    & > .title {
+        margin-top: 3em;
+        margin-bottom: 3em;
+        width: calc(100% - 2em);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    & > .photo-grid {
+        width: calc(100% - 2em);
+        column-count: 3;
+        column-gap: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    
+        & > img {
+            background-color: #eee;
+            display: inline-block;
+            margin: 0 0 1em;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .residenziale {
+        & > .title {
+            width: 70%;
+        }
+
+        & > .photo-grid {
+            width: 70%;
+        }
+    }
+}
