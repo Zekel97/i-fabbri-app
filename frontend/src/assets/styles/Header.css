@@ -9,12 +9,14 @@ body {
 }
 
 header {
+
     height: 5em;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--main-color);
+    box-shadow: 1px 5px 5px var(--font-color);
 }
 
 header > .title {

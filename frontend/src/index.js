@@ -12,12 +12,14 @@ import Homepage from './assets/components/Homepage';
 import Login from './assets/components/Login';
 import Footer from './assets/components/Footer';
 import Residenziale from './assets/components/Residenziale';
+import Industriale from './assets/components/Industriale';
+import Contatti from './assets/components/Contatti';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
-    <Login />
+    <Contatti />
     <Footer />
    
   </React.StrictMode>,

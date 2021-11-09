@@ -1,0 +1,36 @@
+:root {
+    --main-color: #656D4A;
+    --font-color: #C2C5AA;
+}
+
+.contatti{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--main-color);
+  
+}
+.contatti > .title{
+    margin: 1.5em 0;
+}
+
+.contatti > .info-body{
+    margin: 0.075em;
+    padding: 1em 1.75em;
+    border: 2px var(--main-color) solid;
+    border-radius: 2%;
+    
+}
+.contatti > .info-body > .info{
+    font-style: italic;
+    padding-top: 0.5em;
+    line-height: 175%;
+}
+
+.contatti > .info-body > .info-i{
+    font-style: italic;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+
