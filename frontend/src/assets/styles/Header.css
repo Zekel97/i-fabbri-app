@@ -22,7 +22,11 @@ header {
     box-shadow: 1px 5px 5px var(--font-color);
 }
 
-header > .title {
+header > a {
+    text-decoration: none;
+}
+
+header > a > .title {
     display: flex;
     height: min-content;
     flex-direction: row;

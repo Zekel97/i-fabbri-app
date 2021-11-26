@@ -1,16 +1,16 @@
 import '../styles/Header.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 function Header() {
   const [menuOpen, setMenu] = useState(false);
 
-  function buttonClick(e)
+  function openMenu()
   {
     setMenu(!menuOpen);
   }
 
-  function Benvenuto() 
+  function MainNavigation() 
   {
     if (menuOpen) {    
       return  <div className="nav">
@@ -28,6 +28,7 @@ function Header() {
                     <Link to="/contatti">Contatti</Link>
                   </li>
                 </ul>
+                <Link to="/login">Admin</Link>
               </div>;  
     }  
     return null;
@@ -35,15 +36,17 @@ function Header() {
 
   return (
     <header>
-        <div className="title">
-          <h1>I FABBRI</h1>
-          <span>srl</span>
-        </div>
+        <Link to="/">
+          <div className="title">
+            <h1>I FABBRI</h1>
+            <span>srl</span>
+          </div>
+        </Link>
 
-         <button type="button" onClick={buttonClick} className={"menu " + (menuOpen ? 'open' : 'closed')}>
+         <button type="button" onClick={openMenu} className={"menu " + (menuOpen ? 'open' : 'closed')}>
           <div className="burger"></div>
          </button>
-         <Benvenuto />
+         <MainNavigation />
     </header>
   );
 }
