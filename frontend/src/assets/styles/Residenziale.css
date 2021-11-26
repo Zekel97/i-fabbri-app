@@ -3,7 +3,10 @@
     --font-color: #252422;
     --background-color: #CCC5B9;
 }
-
+.residenziale{
+    position: relative;
+    top: 5em;
+}
 .residenziale > .title{
     margin-top: 3em;
     margin-bottom: 3em;
