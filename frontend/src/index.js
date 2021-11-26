@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-/**import {
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";**/
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import './assets/styles/index.css';
 import App from './assets/pages/App';
 import Header from './assets/components/Header';
@@ -19,9 +19,13 @@ import Contatti from './assets/components/Contatti';
 ReactDOM.render(
   <React.StrictMode>
     <Header />
-    <Homepage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/residenziale" element={<Residenziale />} />
+      </Routes>
+    </BrowserRouter>
     <Footer />
-   
   </React.StrictMode>,
   document.getElementById('root')
 );
