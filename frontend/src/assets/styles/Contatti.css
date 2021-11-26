@@ -6,6 +6,7 @@
 
 .contatti{
     position: relative;
+    padding: 10em;
     top: 5em;
     display: flex;
     flex-direction: column;

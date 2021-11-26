@@ -36,8 +36,22 @@ header > .title {
 
 header > .menu {
     position: absolute;
-    right: 1em;
+    right: 7em;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: transparent;
+    border-radius: 25%;
 }
+
+header > .menu:hover,
+header > .open {
+    background-color: var(--background-color);
+}
+
 
 .burger {
     display: block;
@@ -46,8 +60,7 @@ header > .menu {
     width: 2.5em;
     height: .2em;
     border-radius: 45px;
-    top: 0em;
-    right: 1em;
+    
     background-color: var(--font-color);
 }
 
@@ -76,6 +89,33 @@ header > .menu {
 }
 
 .nav {
-    display: none;
+    position: absolute;
+    right: 0;
+    top: 5em;
+    padding: 5em;
+    background-color: var(--main-color);
+    height: calc(100vh - 5em);
+    width: 15vw;
+}
+
+.nav > ul {
+    list-style: none;
+}
+
+.nav li {
+    margin-bottom: 3em;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav li > a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.nav li > a:hover {
+    color: var(--background-color);
+    text-decoration: underline;
 }
 

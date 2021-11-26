@@ -3,19 +3,17 @@ import '../styles/Homepage.css';
 
 function Homepage() {
     return(
-        <div class="circle">
-            <div class="circle-left">
-                <h2 class="text">
+        <div className="circle">
+            <div className="circle-left">
+                <h2 className="text">
                     <Link to="/residenziale">Residenziale</Link>
                 </h2>
-           
             </div> 
-            <div class="circle-right">
-                <h2 class="text">
-                    Industriale
+            <div className="circle-right">
+                <h2 className="text">
+                <Link to="/industriale">Industriale</Link>
                 </h2> 
             </div>
-
         </div>
 
     );

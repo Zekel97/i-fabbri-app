@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
 } from "react-router-dom";
 import './assets/styles/index.css';
 import App from './assets/pages/App';
@@ -18,11 +18,14 @@ import Contatti from './assets/components/Contatti';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
     <BrowserRouter>
+    <Header />
+
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/residenziale" element={<Residenziale />} />
+        <Route path="/industriale" element={<Industriale />} />
+        <Route path="/contatti" element={<Contatti />} />
       </Routes>
     </BrowserRouter>
     <Footer />
