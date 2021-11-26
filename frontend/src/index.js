@@ -19,7 +19,7 @@ import Contatti from './assets/components/Contatti';
 ReactDOM.render(
   <React.StrictMode>
     <Header />
-    <Contatti />
+    <Homepage />
     <Footer />
    
   </React.StrictMode>,
