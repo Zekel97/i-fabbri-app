@@ -1,0 +1,21 @@
+.login {
+    padding: 7em 2em;
+    height: max-content;
+    text-align: center;
+}
+
+.login > .inputs {
+    display: grid;
+    grid-template-rows: 2;
+    gap: 1em;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.login > .inputs > button {
+    height: 2em;
+    background-color: orange;
+    border: 1px solid black;
+    color: black;
+
+}

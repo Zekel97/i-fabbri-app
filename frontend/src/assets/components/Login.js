@@ -4,7 +4,6 @@ var password = '';
 
 
 function Login() {
-
     
     function executeLogin(e) {
         e.preventDefault();
@@ -19,8 +18,11 @@ function Login() {
     
     return(
         <div className="login">
-            <input onChange={getPassword} type="password"></input>
-            <button onClick={executeLogin}></button>
+            <h2>Login</h2>
+            <div className="inputs">
+                <input onChange={getPassword} type="password"></input>
+                <button onClick={executeLogin}>Login</button>
+            </div>
         </div>
     );
 }

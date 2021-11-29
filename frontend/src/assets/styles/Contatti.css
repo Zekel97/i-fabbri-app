@@ -6,12 +6,13 @@
 
 .contatti{
     position: relative;
-    padding: 10em;
+    padding: 2em 2em 10em 2em;
     top: 5em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--main-color);
+    color: var(--font-color);
+    background-color: var(--background-color);
   
 }
 .contatti > .title{
@@ -37,4 +38,9 @@
     font-weight: bold;
 }
 
-
+@media (min-width: 700px){
+    .contatti{
+        padding: 2em 5em 10em 5em;
+        top: 5em;
+    }
+}

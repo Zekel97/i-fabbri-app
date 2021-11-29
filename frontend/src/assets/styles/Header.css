@@ -19,7 +19,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--main-color);
-    box-shadow: 1px 5px 5px var(--font-color);
+    box-shadow: 0px 5px 10px var(--font-color);
 }
 
 header > a {
@@ -40,7 +40,7 @@ header > a > .title {
 
 header > .menu {
     position: absolute;
-    right: 7em;
+    right: 3em;
     height: 3em;
     width: 3em;
     display: flex;
@@ -64,7 +64,6 @@ header > .open {
     width: 2.5em;
     height: .2em;
     border-radius: 45px;
-    
     background-color: var(--font-color);
 }
 
@@ -93,13 +92,15 @@ header > .open {
 }
 
 .nav {
+    padding-top: 2em;
+    border-top: 2px solid var(--font-color);
+    border-left: 2px solid var(--font-color);
     position: absolute;
     right: 0;
     top: 5em;
-    padding: 5em;
     background-color: var(--main-color);
     height: calc(100vh - 5em);
-    width: 15vw;
+    width: 100vw;
 }
 
 .nav > ul {
@@ -123,3 +124,15 @@ header > .open {
     text-decoration: underline;
 }
 
+@media(min-width: 700px){
+    .nav{
+        right: 0;
+        top: 5em;
+        padding: 5em 10em 5em 0em;
+        background-color: var(--main-color);
+        height: calc(100vh - 5em);
+        width: 15vw;
+    }
+ 
+    
+}

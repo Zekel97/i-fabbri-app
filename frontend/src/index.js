@@ -31,7 +31,6 @@ ReactDOM.render(
         <Route element={<PrivateRoute />}>
           <Route path="/admin" element={<Admin />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
     <Footer />

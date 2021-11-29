@@ -16,11 +16,12 @@
     margin-right: auto;
     background-color: var(--background-color);
     padding-bottom: 10em;
+    margin-bottom: 5em;
 }
 
 .circle-left{
     justify-self: right;
-    margin-right: 1em;
+    margin-right: 0.5em;
     width: 150px;
     height: 300px;
     text-align: left;
@@ -30,12 +31,12 @@
     align-items: center;
     background-color: var(--main-color);
     color: var(--font-color);
-    font-size: 27px;
+    font-size: 17px;
 }
 
 .circle-right{
     justify-self: left;
-    margin-left: 1em;
+    margin-left: 0.5em;
     width: 150px;
     height: 300px;
     border-radius: 0 150px 150px 0;
@@ -45,21 +46,23 @@
     text-align: right;
     background-color: var(--main-color);
     color: var(--font-color);
-    font-size: 27px;
+    font-size: 17px;
 }
 .circle-right > .text{
     margin-left: auto;
 }
 
-@media (min-width: 800px){
+@media (min-width: 700px){
     .circle-left{
         width: 250px;
         height: 500px;
         border-radius: 250px 0 0 250px;
+        font-size: 27px;
     }
     .circle-right{
         width: 250px;
         height: 500px;
         border-radius: 0 250px 250px 0;
+        font-size: 27px;
     }
 }

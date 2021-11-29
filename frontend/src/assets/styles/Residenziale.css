@@ -5,7 +5,11 @@
 }
 .residenziale{
     position: relative;
-    top: 5em;
+    top: 1em;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    color: var(--font-color);
+    background-color: var(--background-color);
 }
 .residenziale > .title{
     margin-top: 3em;
@@ -17,7 +21,7 @@
 
 .residenziale > .photo-grid { 
     width: calc(100% - 2em);
-    column-count: 3;
+    column-count: 2;
     column-gap: 1em;
     margin-left: auto;
     margin-right: auto;
@@ -31,6 +35,9 @@ width: 100%;
 }
 
 @media (min-width: 1000px) {
+    .residenziale > .photo-grid{
+        column-count: 3;
+    }
     .residenziale > .title{
         width: 70%;
 

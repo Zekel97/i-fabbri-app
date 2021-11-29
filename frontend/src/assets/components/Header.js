@@ -9,6 +9,7 @@ function Header() {
   {
     setMenu(!menuOpen);
   }
+  
 
   function MainNavigation() 
   {
@@ -16,16 +17,16 @@ function Header() {
       return  <div className="nav">
                 <ul>
                   <li>
-                    <Link to="/">Homepage</Link>
+                    <Link to="/" onClick={() => this.closeMenu()}>Homepage</Link>
                     </li>
                   <li>
-                    <Link to="/residenziale">Residenziale</Link>
+                    <Link to="/residenziale" onClick={() => this.closeMenu()}>Residenziale</Link>
                   </li>
                   <li>
-                    <Link to="/industriale">Industriale</Link>
+                    <Link to="/industriale" onClick={() => this.closeMenu()}>Industriale</Link>
                   </li>
                   <li>
-                    <Link to="/contatti">Contatti</Link>
+                    <Link to="/contatti" onClick={() => this.closeMenu()}>Contatti</Link>
                   </li>
                 </ul>
                 <Link to="/login">Admin</Link>
