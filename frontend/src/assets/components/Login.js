@@ -13,7 +13,7 @@ function Login() {
         e.preventDefault();
         
         var details = {
-            'mail': sha256(email).toString(),
+            'mail': email,
             'password': sha256(password).toString(),
         };
 
