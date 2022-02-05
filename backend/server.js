@@ -5,6 +5,7 @@ const cors = require('cors');
 app.use(cors());
 
 const authLogin = require('./routes/login-route');
+//const uploadRoute = require('./routes/upload-route');
 
 dotenv.config({ path: "./.env" });
 
@@ -21,7 +22,8 @@ mongoose
   .then(() => console.log("DB connection successful!"));
 
 
-app.use("/api/", authLogin);
+app.use("/api/login", authLogin);
+//app.use("/api/upload/", uploadRoute);
 
 const port = process.env.PORT || 3000;
 

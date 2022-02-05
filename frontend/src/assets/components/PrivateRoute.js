@@ -1,12 +1,13 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
+import { useJwt } from "react-jwt";
 
-
-// TODO: function to get token from cookie with time
-const isAuthenticated = true;
+const localToken = localStorage.getItem('i-fabbri-jwt');
 
 const PrivateRoute = () => {
-    return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+  const { isExpired } = useJwt(localToken);
+
+    return !isExpired ? <Outlet /> : <Navigate to="/login" />;
   };
 
 export default PrivateRoute;

@@ -12,10 +12,6 @@ var UserSchema = new Schema({
     type: String,
     required: "E' necessario inserire una password per creare un nuovo utente",
   },
-  created_date: {
-    type: Date,
-    default: Date.now
-  }
 });
 
 module.exports = mongoose.model("User", UserSchema);

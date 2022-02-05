@@ -1,19 +1,22 @@
 import '../styles/Login.css';
+import sha256 from 'crypto-js/sha256';
+import { useNavigate } from 'react-router-dom';
 
 var password = '';
 var email = '';
 
 
 function Login() {
-    
+    let navigate = useNavigate();
+
     function executeLogin(e) {
         e.preventDefault();
         
         var details = {
-            'mail': email,
-            'password': password,
+            'mail': sha256(email).toString(),
+            'password': sha256(password).toString(),
         };
-        
+
         var formBody = [];
         for (var property in details) {
           var encodedKey = encodeURIComponent(property);
@@ -29,8 +32,17 @@ function Login() {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
             },
             body: formBody
-        }).then(res => {
-            console.log(res.json());
+        }).then(res => res.json())
+        .then(data => {            
+            console.log(data);
+            if(data.auth)
+            {
+                console.log('INSIDE AUTH');
+                localStorage.setItem('i-fabbri-jwt', data.token);
+                navigate('/admin');
+            }
+            // TODO: handle this
+            return new Error('Trouble auth');
         })
     }   
 
@@ -43,7 +55,6 @@ function Login() {
         e.preventDefault();
         password = e.target.value;
     }   
-
     
     return(
         <div className="login">
