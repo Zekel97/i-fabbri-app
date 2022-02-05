@@ -1,6 +1,22 @@
 import '../styles/Residenziale.css';
+import {useEffect, useState} from 'react';
 
 function Residenziale() {
+    const [imageArray, setImageArray] = useState([]);
+
+    useEffect(() => {
+        retrieveImages()
+    },[]);
+    
+    const retrieveImages = () => {
+        fetch('http://localhost:3000/api/upload/residenziale/', {
+            method: 'GET',
+        }).then(res => res.json())
+        .then(data => {
+            setImageArray(data);
+        })
+    }
+
     return(
         <div className="residenziale">
             <div className="title">
@@ -8,16 +24,17 @@ function Residenziale() {
             </div>
 
             <div className="photo-grid">
-                <img src="https://picsum.photos/200/500" alt="" />
-                <img src="https://picsum.photos/800/400" alt="" />
-                <img src="https://picsum.photos/500/500" alt="" />
-                <img src="https://picsum.photos/800/300" alt="" />
-                <img src="https://picsum.photos/300/800" alt="" />
-                <img src="https://picsum.photos/200/500" alt="" />
-                <img src="https://picsum.photos/800/400" alt="" />
-                <img src="https://picsum.photos/500/500" alt="" />
-                <img src="https://picsum.photos/800/300" alt="" />
-                <img src="https://picsum.photos/300/800" alt="" />
+                {
+                    imageArray.length >0 &&
+                    imageArray.map((el, key) => {
+                        const url = `http://localhost:3000/residenziale/${el}`;
+                        return(<img key={key} src={url} alt="" />);
+                    })
+                }
+                {
+                    imageArray.length <= 0 && 
+                    <div>NOTHING</div>
+                }
             </div>
         </div>
     );

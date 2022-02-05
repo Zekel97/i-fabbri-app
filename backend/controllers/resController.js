@@ -1,30 +1,26 @@
-const fs = require("fs");
-//const multer = require("multer");
-const path = require('path');
+const fs = { ...require('fs').promises };
 
+const path = require('path');
 const catchAsync = require("../utils/catchAsync");
-/*
-app.post("/uploadphoto",upload.single('myImage'),(req,res)=>{
-    var img = fs.readFileSync(req.file.path);
-    var encode_img = img.toString('base64');
-    var final_img = {
-        contentType:req.file.mimetype,
-        image:new Buffer(encode_img,'base64')
-    };
-    imageModel.create(final_img,function(err,result){
-        if(err){
-            console.log(err);
-        }else{
-            console.log(result.img.Buffer);
-            console.log("Saved To database");
-            res.contentType(final_img.contentType);
-            res.send(final_img.image);
-        }
-    })
-})
-*/
+
 exports.upload = catchAsync(async (req, res, next) => {
-    //const img = fs.readFileSync(req.file.path);
-    console.log(res.body);
-    return res.status(200);
+    console.log(req.file);
+    const file = req.file;
+    if (!file) {
+      const error = new Error('No File')
+      error.httpStatusCode = 400
+      return next(error)
+    }
+    console.log(file);
+    res.send(file);
+})
+
+exports.retrieve = catchAsync(async (req, res, next) => {
+    
+    try {
+        const files = await fs.readdir('./uploads/residenziale');
+        res.status(200).json(files);
+    } catch (err) {
+        res.status(500).json(err);
+    }
 })

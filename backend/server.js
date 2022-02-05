@@ -5,7 +5,8 @@ const cors = require('cors');
 app.use(cors());
 
 const authLogin = require('./routes/login-route');
-//const uploadRoute = require('./routes/upload-route');
+const uploadResRoute = require('./routes/upload-res-route');
+const uploadIndRoute = require('./routes/upload-ind-route');
 
 dotenv.config({ path: "./.env" });
 
@@ -23,7 +24,8 @@ mongoose
 
 
 app.use("/api/login", authLogin);
-//app.use("/api/upload/", uploadRoute);
+app.use("/api/upload/residenziale", uploadResRoute);
+app.use("/api/upload/industriale", uploadIndRoute);
 
 const port = process.env.PORT || 3000;
 
