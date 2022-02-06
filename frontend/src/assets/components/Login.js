@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 var password = '';
 var email = '';
 
-
 function Login() {
+
     let navigate = useNavigate();
 
     function executeLogin(e) {
@@ -56,12 +56,27 @@ function Login() {
         password = e.target.value;
     }   
     
-    return(
+
+    return (
+
         <div className="login">
             <h2>Login</h2>
             <div className="inputs">
-                <input onChange={getEmail} type="email"></input>
-                <input onChange={getPassword} type="password"></input>
+                <div className="div-input">
+                    <input
+                        placeholder="Email"
+                        className="input"
+                        onChange={getEmail}
+                        type="email"></input>
+                </div>
+                <div className="div-input">
+                    <input
+                        placeholder="Password"
+                        className="input"
+                        onChange={getPassword}
+                        type="password"></input>
+                </div>
+
                 <button onClick={executeLogin}>Login</button>
             </div>
         </div>

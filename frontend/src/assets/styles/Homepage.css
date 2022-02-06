@@ -17,6 +17,7 @@
     background-color: var(--background-color);
     padding-bottom: 10em;
     margin-bottom: 5em;
+
 }
 
 .circle-left{
@@ -26,12 +27,13 @@
     height: 300px;
     text-align: left;
     border-radius: 150px 0 0 150px;
-    border: black solid 1px;
+    border: var(--font-color) solid 1px;
     display: flex;
     align-items: center;
     background-color: var(--main-color);
     color: var(--font-color);
     font-size: 17px;
+    box-shadow: 0px 5px 10px gray;
 }
 
 .circle-right{
@@ -40,16 +42,24 @@
     width: 150px;
     height: 300px;
     border-radius: 0 150px 150px 0;
-    border: black solid 1px;
+    border: var(--font-color) solid 1px;
     display: flex;
     align-items: center;
     text-align: right;
     background-color: var(--main-color);
     color: var(--font-color);
     font-size: 17px;
+    box-shadow: 0px 5px 10px gray;
+    
 }
 .circle-right > .text{
     margin-left: auto;
+    
+}
+.text > a{
+    color: inherit;
+    text-decoration: none;
+    box-shadow: none;
 }
 
 @media (min-width: 700px){

@@ -1,21 +1,53 @@
 .login {
     padding: 7em 2em;
     height: max-content;
+    background-color: var(--background-color);
+}
+.login > h2{
     text-align: center;
+    font-size: 30px;
 }
 
 .login > .inputs {
     display: grid;
     grid-template-rows: 2;
+    justify-content: center;
     gap: 1em;
-    width: 60vw;
     margin: 0 auto;
+    background-color:  rgba(122, 122, 122, 0.4);
+    border-radius: 10px;
+    padding: 2em 1em;
+    width: 300px;
+}
+
+.div-input{
+    display: flex;
+    gap: 1em;
+}
+
+.input{
+    border: none;
+    border-radius: 5px;
+    padding-left: 5px;
+    width: 15em;
+    height: 2.5em;
+
+}
+.input:focus{
+    outline: none;
+    box-shadow: 0px 5px 10px gray;
+    border: 2px solid var(--main-color);
 }
 
 .login > .inputs > button {
-    height: 2em;
-    background-color: orange;
-    border: 1px solid black;
-    color: black;
-
+    cursor: pointer;
+    height: 2.5em;
+    width: 10em;
+    background-color: var(--main-color);
+    font-weight: bold;
+    color: var(--font-color);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px gray;
+    justify-self: center;
 }
