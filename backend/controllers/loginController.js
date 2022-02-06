@@ -17,7 +17,5 @@ exports.login = catchAsync(async (req, res, next) => {
         expiresIn: 86400 // expires in 24 hours
       });
         
-    console.log(token);
     return res.status(200).json({ auth: true, token: token });
-  
 });

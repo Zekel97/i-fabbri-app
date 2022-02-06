@@ -8,7 +8,7 @@ function Admin() {
     const [residenzialeImageArray, setResidenzialeArray] = useState([]);
     const [selectedIndFile, setIndustrialeFile] = useState(null);
     const [selectedResFile, setResidenzialeFile] = useState(null);
-
+    
     useEffect(() => {
         retrieveImages()
     },[]);
