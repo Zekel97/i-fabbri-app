@@ -30,13 +30,17 @@
     border: var(--font-color) solid 1px;
     display: flex;
     align-items: center;
-    background-color: var(--main-color);
+    background-image: linear-gradient(to right, rgba(255,255,255, 0.2) 0 100%), url(../img/Resid.jpg);
+    background-size: 190%;
+    background-position: 40% 40%;
+    background-repeat: no-repeat;
     color: var(--font-color);
     font-size: 17px;
     box-shadow: 0px 5px 10px gray;
+    position: relative;
 }
 
-.circle-right{
+.circle-right {
     justify-self: left;
     margin-left: 0.5em;
     width: 150px;
@@ -46,20 +50,39 @@
     display: flex;
     align-items: center;
     text-align: right;
-    background-color: var(--main-color);
+    background-image: linear-gradient(to right, rgba(255,255,255, 0.2) 0 100%), url(../img/Indus.jpg);
+    background-size: 260%;
+    background-position: 60% 0;
+    background-repeat: no-repeat;
     color: var(--font-color);
     font-size: 17px;
     box-shadow: 0px 5px 10px gray;
-    
+    position: relative;
 }
-.circle-right > .text{
+.circle-right > .text {
     margin-left: auto;
-    
+    position: absolute;
+    right: -.5em;
+    font-size: 1.8em;
+    top: 4em;
 }
-.text > a{
-    color: inherit;
+.circle-left > .text {
+    position: absolute;
+    left: -.5em;
+    font-size: 1.8em;
+    top: 3em;
+}
+.text > a {
+    color: var(--font-color);
     text-decoration: none;
-    box-shadow: none;
+    text-shadow: 2px 2px 0 var(--background-color), 
+                 2px -2px 0 var(--background-color), 
+                -2px 2px 0 var(--background-color), 
+                -2px -2px 0 var(--background-color), 
+                2px 0px 0 var(--background-color), 
+                0px 2px 0 var(--background-color), 
+                -2px 0px 0 var(--background-color), 
+                0px -2px 0 var(--background-color);
 }
 
 @media (min-width: 700px){
@@ -74,5 +97,18 @@
         height: 500px;
         border-radius: 0 250px 250px 0;
         font-size: 27px;
+    }
+
+    .text > a:hover {
+        color: var(--font-color);
+        text-decoration: none;
+        text-shadow: 2px 2px 0 var(--main-color), 
+                     2px -2px 0 var(--main-color), 
+                    -2px 2px 0 var(--main-color), 
+                    -2px -2px 0 var(--main-color), 
+                    2px 0px 0 var(--main-color), 
+                    0px 2px 0 var(--main-color), 
+                    -2px 0px 0 var(--main-color), 
+                    0px -2px 0 var(--main-color);
     }
 }

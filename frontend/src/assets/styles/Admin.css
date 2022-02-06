@@ -3,15 +3,59 @@
     --font-color: #252422;
     --background-color: #CCC5B9;
 }
-.residenziale{
+.admin{
+    background-color: var(--background-color);
+    padding: 4em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.admin-residenziale{
     background-color: rgba(255, 255, 255, 0.4);
+    margin-top: 1em;
+    padding: 0 0 0 .5em;
+    box-shadow: 0px 5px 10px gray;
+}
+.imageList{
+    list-style: none;
+    height: 15em;
+    overflow-y: scroll;
+    padding: 0.5em;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.imageList > li {
+    display: flex;
+    gap: 10px;
+
+}
+.imageList > li > button{
+    height: 50%;
+    align-self: center;
+}
+
+.imageList > li > img {
+    margin-top: 10px;
+    width: 5em;
+    height: auto;
+}
+.admin-industriale{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0 0 0 .5em;
+    box-shadow: 0px 5px 10px gray;
 }
 
 @media(min-width: 700px){
     .admin{
-        background-color: var(--background-color);
         padding: 20vh 0;
         display: flex;
+        flex-direction: row;
         justify-content: space-evenly;
+    }
+    .admin-residenziale{
+        padding: 2em 5em;
+    }
+    .admin-industriale{
+        padding: 2em 5em;
     }
 }
