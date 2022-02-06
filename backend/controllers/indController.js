@@ -26,11 +26,8 @@ exports.retrieve = catchAsync(async (req, res, next) => {
 
 exports.remove = catchAsync(async (req, res, next) => {
     console.log(req.params.id);
-    const filePath = path.join(__dirname, '/uploads/industriale/'+req.params.id);
     
-    fs.unlink(filePath, function (err) {
+    fs.unlink('./uploads/industriale/'+req.params.id, function (err) {
         if(err) throw err;
-        console.log('deleted');
     })
-
 })

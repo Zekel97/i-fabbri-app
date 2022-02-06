@@ -21,4 +21,8 @@ router
     .get(residenzialeController.retrieve)
     .post(resUpload.single('file'), residenzialeController.upload);
 
+    router
+    .route("/:id")
+    .delete(residenzialeController.remove);
+
 module.exports = router;

@@ -1,22 +1,40 @@
 import '../styles/Admin.css';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Admin() {
 
-    const [state, setState] = useState(
-        {
-            selectedIndFile: null,
-            selectedResFile: null
-        }
-    )
+    const [industrialeImageArray, setIndustrialeArray] = useState([]);
+    const [residenzialeImageArray, setResidenzialeArray] = useState([]);
+    const [selectedIndFile, setIndustrialeFile] = useState(null);
+    const [selectedResFile, setResidenzialeFile] = useState(null);
 
+    useEffect(() => {
+        retrieveImages()
+    },[]);
+
+    const retrieveImages = () => {
+        fetch('http://localhost:3000/api/upload/industriale', {
+            method: 'GET',
+        }).then(res => res.json())
+        .then(data => {
+            setIndustrialeArray(data);
+        });
+
+        fetch('http://localhost:3000/api/upload/residenziale', {
+            method: 'GET',
+        }).then(res => res.json())
+        .then(data => {
+            setResidenzialeArray(data);
+        });
+    }
+  
     const upload = (category) => () => {
         const data = new FormData();
         if (category === 'residenziale') {
-            data.append('file', state.selectedResFile);
+            data.append('file', selectedResFile);
         } else {
-            data.append('file', state.selectedIndFile);
+            data.append('file', selectedIndFile);
         }
         axios.post("http://localhost:3000/api/upload/" + category, data)
             .then(res => { // then print response status
@@ -40,21 +58,31 @@ function Admin() {
                     <input
                         className='input-residenziale'
                         type="file"
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                selectedResFile: e.target.files[0],
-                            })
-                        }
+                        onChange={(e) => setResidenzialeFile(e.target.files[0])}
                     />
                     <button className="residenziale" onClick={upload('residenziale')}>Upload</button>
-                </div>
+                </div>  
 
                 <div className="fileList">
-                    <button onClick={remove('laptop.jpg', 'industriale')}></button>
+                    
+                    <ul className="imageList">
                     {
-                        //TODO: Insert file list to delete
+                        residenzialeImageArray.length > 0 &&
+                        residenzialeImageArray.map((el, key) => {
+                            const url = `http://localhost:3000/residenziale/${el}`;
+                            return (
+                            <li key={key}>
+                                <img src={url} alt="" style={{width: "2em", height:"2em"}}/>
+                                <button onClick={remove(el, 'residenziale')}>X</button>
+                                </li>
+                            );
+                        })
                     }
+                    {
+                        residenzialeImageArray.length <= 0 &&
+                        <div>NOTHING</div>
+                    }
+                    </ul>
                 </div>
             </div>
 
@@ -64,24 +92,30 @@ function Admin() {
                     <input
                         className='input-industriale'
                         type="file"
-                        onChange={(e) =>
-                            setState({
-                                ...state,
-                                selectedIndFile: e.target.files[0],
-                            })}
+                        onChange={(e) =>setIndustrialeFile(e.target.files[0])}
                     />
                     <button className="industriale" onClick={upload('industriale')}>Upload</button>
                 </div>
 
                 <div className="fileList">
+                    <ul className="imageList">
                     {
-                        //TODO: Insert file list to delete
-                        /*
-                        ul
-                            li
-                        ul
-                        */
+                        industrialeImageArray.length > 0 &&
+                        industrialeImageArray.map((el, key) => {
+                            const url = `http://localhost:3000/industriale/${el}`;
+                            return (
+                            <li key={key}>
+                                <img src={url} alt="" style={{width: "2em", height:"2em"}}/>
+                                <button onClick={remove(el, 'industriale')}>X</button>
+                                </li>
+                            );
+                    })
                     }
+                    {
+                        industrialeImageArray.length <= 0 &&
+                        <div>NOTHING</div>
+                    }
+                    </ul>
                 </div>
             </div>
         </div>
