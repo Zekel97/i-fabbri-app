@@ -39,7 +39,6 @@ function Admin() {
         }
         axios.post("http://localhost:3000/api/upload/" + category, data)
             .then(res => { // then print response status
-                console.log(res.statusText)
                 setRefresh(!refresh)
             })
     }
@@ -47,7 +46,7 @@ function Admin() {
     const remove = (id, category) => () => {
         axios.delete("http://localhost:3000/api/upload/" + category +"/"+id)
             .then(res => { // then print response status
-                console.log("delete",res.statusText)
+                setRefresh(!refresh)
             })
             
     }

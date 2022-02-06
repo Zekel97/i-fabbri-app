@@ -24,13 +24,9 @@ exports.retrieve = catchAsync(async (req, res, next) => {
     }
 })
 
-exports.remove = catchAsync(async (req, res, next) => {
-    console.log(req.params.id);
-    
+exports.remove = catchAsync(async (req, res, next) => {    
     fs.unlink('./uploads/industriale/'+req.params.id, function (err) {
         if(err) throw err;
-        
     })
-    res.status(200);
-    
+    res.status(200).json({status: 'OK'});    
 })
