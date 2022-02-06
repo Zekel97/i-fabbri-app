@@ -39,7 +39,7 @@ function Login() {
             {
                 console.log('INSIDE AUTH');
                 localStorage.setItem('i-fabbri-jwt', data.token);
-                navigate('/admin');
+                navigate("../admin")
             }
             // TODO: handle this
             return new Error('Trouble auth');

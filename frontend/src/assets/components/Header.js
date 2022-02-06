@@ -16,19 +16,19 @@ function Header() {
       <div className="nav">
         <ul>
           <li>
-            <Link to="/" onClick={() => this.closeMenu()}>Homepage</Link>
+            <Link to="/" onClick={openMenu}>Homepage</Link>
           </li>
           <li>
-            <Link to="/residenziale" onClick={() => this.closeMenu()}>Residenziale</Link>
+            <Link to="/residenziale" onClick={openMenu}>Residenziale</Link>
           </li>
           <li>
-            <Link to="/industriale" onClick={() => this.closeMenu()}>Industriale</Link>
+            <Link to="/industriale" onClick={openMenu}>Industriale</Link>
           </li>
           <li>
-            <Link to="/contatti" onClick={() => this.closeMenu()}>Contatti</Link>
+            <Link to="/contatti" onClick={openMenu}>Contatti</Link>
           </li>
           <li>
-            <Link to="/admin">Admin</Link>
+            <Link to="/admin" onClick={openMenu}>Admin</Link>
           </li>
         </ul>
 

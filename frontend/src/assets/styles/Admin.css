@@ -1,0 +1,17 @@
+:root {
+    --main-color: #EB5E28;
+    --font-color: #252422;
+    --background-color: #CCC5B9;
+}
+.residenziale{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+@media(min-width: 700px){
+    .admin{
+        background-color: var(--background-color);
+        padding: 20vh 0;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
