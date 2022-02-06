@@ -29,5 +29,8 @@ exports.remove = catchAsync(async (req, res, next) => {
     
     fs.unlink('./uploads/industriale/'+req.params.id, function (err) {
         if(err) throw err;
+        
     })
+    res.status(200);
+    
 })

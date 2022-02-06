@@ -8,17 +8,18 @@ function Admin() {
     const [residenzialeImageArray, setResidenzialeArray] = useState([]);
     const [selectedIndFile, setIndustrialeFile] = useState(null);
     const [selectedResFile, setResidenzialeFile] = useState(null);
+    const [refresh, setRefresh] = useState(false)
     
     useEffect(() => {
         retrieveImages()
-    },[]);
+    },[refresh]);
 
     const retrieveImages = () => {
         fetch('http://localhost:3000/api/upload/industriale', {
             method: 'GET',
         }).then(res => res.json())
         .then(data => {
-            setIndustrialeArray(data);
+            setIndustrialeArray(data);    
         });
 
         fetch('http://localhost:3000/api/upload/residenziale', {
@@ -39,14 +40,16 @@ function Admin() {
         axios.post("http://localhost:3000/api/upload/" + category, data)
             .then(res => { // then print response status
                 console.log(res.statusText)
+                setRefresh(!refresh)
             })
     }
 
     const remove = (id, category) => () => {
         axios.delete("http://localhost:3000/api/upload/" + category +"/"+id)
             .then(res => { // then print response status
-                console.log(res.statusText)
+                console.log("delete",res.statusText)
             })
+            
     }
 
     return (

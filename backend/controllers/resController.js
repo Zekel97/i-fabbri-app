@@ -23,7 +23,11 @@ exports.retrieve = catchAsync(async (req, res, next) => {
 })
 
 exports.remove = catchAsync(async (req, res, next) => {
-    fs.unlink('./uploads/residenziale/'+req.params.id, function (err) {
+    await fs.unlink('./uploads/residenziale/'+req.params.id, function (err) {
         if(err) throw err;
+        //res.status(200);
     })
+    res.status(200)
+    
+
 })
