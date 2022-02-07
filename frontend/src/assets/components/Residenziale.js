@@ -9,7 +9,7 @@ function Residenziale() {
     },[]);
     
     const retrieveImages = () => {
-        fetch('http://localhost:3000/api/upload/residenziale/', {
+        fetch('http://localhost:3000/api/category/residenziale/', {
             method: 'GET',
         }).then(res => res.json())
         .then(data => {

@@ -9,7 +9,7 @@ function Industriale() {
     }, []);
 
     const retrieveImages = () => {
-        fetch('http://localhost:3000/api/upload/industriale', {
+        fetch('http://localhost:3000/api/category/industriale', {
             method: 'GET',
         }).then(res => res.json())
             .then(data => {

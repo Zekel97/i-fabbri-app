@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 var password = '';
 var email = '';
 
-function Login() {
+const Login = () => {
 
     let navigate = useNavigate();
 
@@ -34,15 +34,9 @@ function Login() {
             body: formBody
         }).then(res => res.json())
         .then(data => {            
-            console.log(data);
-            if(data.auth)
-            {
-                console.log('INSIDE AUTH');
-                localStorage.setItem('i-fabbri-jwt', data.token);
-                navigate("../admin")
-            }
-            // TODO: handle this
-            return new Error('Trouble auth');
+            if(!data.auth) return new Error('Trouble auth');
+            localStorage.setItem('i-fabbri-jwt', data.token);
+            return navigate("../admin");
         })
     }   
 

@@ -15,14 +15,14 @@ function Admin() {
     }, [refresh]);
 
     const retrieveImages = () => {
-        fetch('http://localhost:3000/api/upload/industriale', {
+        fetch('http://localhost:3000/api/category/industriale', {
             method: 'GET',
         }).then(res => res.json())
             .then(data => {
                 setIndustrialeArray(data);
             });
 
-        fetch('http://localhost:3000/api/upload/residenziale', {
+        fetch('http://localhost:3000/api/category/residenziale', {
             method: 'GET',
         }).then(res => res.json())
             .then(data => {
@@ -37,15 +37,15 @@ function Admin() {
         } else {
             data.append('file', selectedIndFile);
         }
-        axios.post("http://localhost:3000/api/upload/" + category, data)
-            .then(res => { // then print response status
+        axios.post("http://localhost:3000/api/category/" + category, data)
+            .then(res => {
                 setRefresh(!refresh)
             })
     }
 
     const remove = (id, category) => () => {
-        axios.delete("http://localhost:3000/api/upload/" + category + "/" + id)
-            .then(res => { // then print response status
+        axios.delete("http://localhost:3000/api/category/" + category + "/" + id)
+            .then(res => { 
                 setRefresh(!refresh)
             })
 

@@ -51,3 +51,9 @@
     box-shadow: 0px 5px 10px gray;
     justify-self: center;
 }
+
+@media (min-width: 700px) {
+    .login {
+        padding: 20% 2em;
+    }
+}
