@@ -15,19 +15,15 @@ function Admin() {
     }, [refresh]);
 
     const retrieveImages = () => {
-        fetch('http://localhost:3000/api/category/industriale', {
-            method: 'GET',
-        }).then(res => res.json())
-            .then(data => {
-                setIndustrialeArray(data);
-            });
+        axios.get('http://localhost:3000/api/category/industriale')
+            .then(res => {
+                setIndustrialeArray(res.data);
+            })
 
-        fetch('http://localhost:3000/api/category/residenziale', {
-            method: 'GET',
-        }).then(res => res.json())
-            .then(data => {
-                setResidenzialeArray(data);
-            });
+        axios.get('http://localhost:3000/api/category/residenziale')
+            .then(res => {
+                setResidenzialeArray(res.data);
+            })
     }
 
     const upload = (category) => () => {
@@ -45,7 +41,7 @@ function Admin() {
 
     const remove = (id, category) => () => {
         axios.delete("http://localhost:3000/api/category/" + category + "/" + id)
-            .then(res => { 
+            .then(res => {
                 setRefresh(!refresh)
             })
 

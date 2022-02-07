@@ -1,4 +1,5 @@
 import '../styles/Residenziale.css';
+import axios from 'axios';
 import {useEffect, useState} from 'react';
 
 function Residenziale() {
@@ -9,12 +10,10 @@ function Residenziale() {
     },[]);
     
     const retrieveImages = () => {
-        fetch('http://localhost:3000/api/category/residenziale/', {
-            method: 'GET',
-        }).then(res => res.json())
-        .then(data => {
-            setImageArray(data);
-        })
+        axios.get('http://localhost:3000/api/category/residenziale')
+            .then(res => {
+                setImageArray(res.data);
+            })
     }
 
     return(

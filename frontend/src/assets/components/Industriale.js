@@ -1,4 +1,5 @@
 import '../styles/Industriale.css';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function Industriale() {
@@ -9,11 +10,10 @@ function Industriale() {
     }, []);
 
     const retrieveImages = () => {
-        fetch('http://localhost:3000/api/category/industriale', {
-            method: 'GET',
-        }).then(res => res.json())
-            .then(data => {
-                setImageArray(data);
+
+        axios.get('http://localhost:3000/api/category/industriale')
+            .then(res => {
+                setImageArray(res.data);
             })
     }
 

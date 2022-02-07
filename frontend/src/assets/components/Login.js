@@ -1,6 +1,7 @@
 import '../styles/Login.css';
 import sha256 from 'crypto-js/sha256';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 var password = '';
 var email = '';
@@ -25,17 +26,11 @@ const Login = () => {
         }
         formBody = formBody.join("&");
 
-
-        fetch('http://localhost:3000/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            },
-            body: formBody
-        }).then(res => res.json())
-        .then(data => {            
-            if(!data.auth) return new Error('Trouble auth');
-            localStorage.setItem('i-fabbri-jwt', data.token);
+        axios.post('http://localhost:3000/api/login', details)
+        .then(res => {
+            console.log(res)
+            if(!res.data.auth) return new Error('Trouble auth');
+            localStorage.setItem('i-fabbri-jwt', res.data.token);
             return navigate("../admin");
         })
     }   
