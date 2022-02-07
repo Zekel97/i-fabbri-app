@@ -1,7 +1,6 @@
 const promises = { ...require('fs').promises };
 const fs = require('fs');
 
-const path = require('path');
 const catchAsync = require("../utils/catchAsync");
 
 exports.upload = catchAsync(async (req, res, next) => {
